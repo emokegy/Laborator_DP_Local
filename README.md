@@ -1,2 +1,2 @@
-# LAB-DP
+# LAB-DP.
 # Gyenes Emoke-Anita
