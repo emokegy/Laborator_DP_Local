@@ -43,13 +43,13 @@ public class Paragraf implements Element,Observable{
     System.out.println("ERORR");
   }
 
-  @Override
+ 
   public void remove(Element element) {
     System.out.println("ERORR");
 
   }
 
-  @Override
+
   public Element getElement(int index) {
     System.out.println("ERORR");
     return null;
@@ -57,7 +57,7 @@ public class Paragraf implements Element,Observable{
 
 
 
-@Override
+
 public void addObserver(Observerr obs) {
 	this.obs.add(obs);
 	
@@ -65,14 +65,14 @@ public void addObserver(Observerr obs) {
 
 
 
-@Override
+
 public void removeObserver(Observerr obs) {
 	this.obs.remove(obs);
 }
 
 
 
-@Override
+
 public void notifyObservers() {
 	for(Observerr o :obs)
 	{
@@ -88,12 +88,18 @@ public void notifyObservers() {
 
 
 
-@Override
 public void setNewValue(String newValue) {
 	OldValue=this.text;
     text=newValue;
     notifyObservers();
 	
+}
+
+
+
+public Section copy() {
+	// TODO Auto-generated method stub
+	return null;
 }
 
 

@@ -1,4 +1,4 @@
-import dp_lab2.DocumentManager;
+
 
 public class OpenCommand implements Command{
 	public String st;

@@ -12,7 +12,7 @@ public class Tabel implements Element,Observable{
 		this.nume = nume;
 	}
 	
-	@Override
+	
 	public void print()
 	{
 		System.out.println("Tabel: " + this.nume);
@@ -29,30 +29,30 @@ public class Tabel implements Element,Observable{
     System.out.println("ERORR");
   }
 
-  @Override
+  
   public void remove(Element x) {
     System.out.println("ERORR");
   }
 
-  @Override
+  
   public Element getElement(int index) {
     System.out.println("ERORR");
     return null;
   }
 
-@Override
+
 public void addObserver(Observerr obs) {
 	this.obs.add(obs);
 	
 }
 
-@Override
+
 public void removeObserver(Observerr obs) {
 	// TODO Auto-generated method stub
 	
 }
 
-@Override
+
 public void notifyObservers() {
 	
 	for(Observerr o :obs)
@@ -62,7 +62,7 @@ public void notifyObservers() {
 	
 }
 
-@Override
+
 public void setNewValue(String newValue) {
 	oldValue=this.nume;
     nume=newValue;
@@ -70,5 +70,10 @@ public void setNewValue(String newValue) {
 
 	this.notifyObservers();
 	
+}
+
+public Section copy() {
+	// TODO Auto-generated method stub
+	return null;
 }
 }

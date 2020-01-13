@@ -21,10 +21,10 @@ public class Section implements Element,Observable{
     	
     }
 	
-	public int addElm(Element elm)
+	public int addElm(Object e)
 	{
-		content.add(elm);
-		return content.indexOf(elm);
+		content.add((Element) e);
+		return content.indexOf(e);
 	}
 	
 	public void delete(Element elm)
@@ -36,7 +36,7 @@ public class Section implements Element,Observable{
 	{
 		return content.get(ind);
 	}
-	@Override
+	
 	public void print()
 	{
 		System.out.println(this.title);
@@ -55,31 +55,30 @@ public void accept(Visitor a) {
 		
 }
 
-@Override
+
 public void add(Element element) {
 	 content.add(element);
 	
 }
 
-@Override
 public void remove(Element element) {
 	// TODO Auto-generated method stub
 	
 }
 
-@Override
+
 public void addObserver(Observerr obs) {
 	this.obs.add(obs);
 	
 }
 
-@Override
+
 public void removeObserver(Observerr obs) {
 	this.obs.remove(obs);
 	
 }
 
-@Override
+
 public void notifyObservers() {
 	for(Observerr o:obs)
 	{
@@ -88,7 +87,7 @@ public void notifyObservers() {
 	
 }
 
-@Override
+
 public void setNewValue(String newValue) {
 	oldValue=this.title;
     title=newValue;

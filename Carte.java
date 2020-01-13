@@ -289,17 +289,33 @@ public class Carte implements Element{
 	}
 
 
-	@Override
 	public void setNewValue(String newValue) {
 		// TODO Auto-generated method stub
 		
 	}
 
 
-	@Override
 	public Section copy() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+	public void addObserver(Observerr obs) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void removeObserver(Observerr obs) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void notifyObservers() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

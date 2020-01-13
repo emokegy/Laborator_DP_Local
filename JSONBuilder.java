@@ -26,21 +26,20 @@ public Element document;
 public final String bookJSONPath = "../book.json";
 
  
- @Override
-    public Element GetResult() {
+ public Element GetResult() {
   
  return document;
     }
 
  
-   @Override
-    public void Build() {
+   public void Build() {
   
       try {
          
    ObjectMapper mapper = new ObjectMapper();
   
-         HashMap<String, Object> map = mapper.readValue(new File(bookJSONPath),
+         @SuppressWarnings("unchecked")
+		HashMap<String, Object> map = mapper.readValue(new File(bookJSONPath),
   
                   HashMap.class);
             document = processMap(map);
@@ -60,23 +59,29 @@ public final String bookJSONPath = "../book.json";
     }
 
   
-  @Override
-    public Element BuildSection(HashMap<String, Object> map) {
+  public Element BuildSection(HashMap<String, Object> map) {
     
     Section section = new Section((String)map.get("title"));
        
- Collection<HashMap<String, Object>> children = (Collection)map.get("children");
-
-        children.forEach((childMap) -> {
+ @SuppressWarnings("unchecked")
+Collection<HashMap<String, Object>> collection = (Collection<HashMap<String, Object>>)map.get("children");
+Collection<HashMap<String, Object>> collection2 = collection;
+Collection<HashMap<String, Object>> collection1 = collection2;
+Collection<HashMap<String, Object>> collection21 = collection1;
+Collection<HashMap<String, Object>> collection11 = collection21;
+Collection<HashMap<String, Object>> children = collection11;
+		Object e;
+		HashMap<String, Object> childMap = null;
+		
 
           
-  Element e = this.processMap(childMap);
+  Element e1 = this.processMap(childMap);
           
-  if (e != null) {
+  if (e1 != null) {
              
    try {
                   
-  section.addElm(e);
+  section.addElm(e1);
            
      } catch (Exception var5) {
          
@@ -84,37 +89,32 @@ public final String bookJSONPath = "../book.json";
            
      }
 
-    }
-
-        });
+  }
   
       return section;
  
    }
 
 
- @Override
-    public Element BuildParagraph(HashMap<String, Object> map) {
+ public Element BuildParagraph(HashMap<String, Object> map) {
    
      return new Paragraf((String)map.get("text"));
     }
 
   
-  @Override
-    public Element BuildImage(HashMap<String, Object> map) {
+  public Element BuildImage(HashMap<String, Object> map) {
      
    return new Imagine((String)map.get("url"));
     }
 
    
- @Override
+
     public Element BuildImageProxy(HashMap<String, Object> map) {
      
    return new ImageProxy((String)map.get("url"));
     }
 
    
- @Override
     public Element BuildTable(HashMap<String, Object> map) {
        
  return new Tabel((String)map.get("text"));
