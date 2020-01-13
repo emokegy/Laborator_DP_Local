@@ -1,2 +1,2 @@
-# LABORATOR-DP.
+# LABORATOR-DP
 # Gyenes Emoke-Anita
